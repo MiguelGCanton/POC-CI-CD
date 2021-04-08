@@ -1,8 +1,9 @@
 # Use root/example as user/password credentials
-version: '3.1'
+version: '3.7'
 
 services:
   db:
+    container_name: db
     image: mysql:latest
     restart: always
     environment:
@@ -13,6 +14,8 @@ services:
       MYSQL_PASSWORD: 'password'
       # Password for root access
       MYSQL_ROOT_PASSWORD: 'password'
+    networks:
+       - env_prod  
     ports:
       # <Port exposed> : < MySQL Port running inside container>
       - '3306:3306'
@@ -23,6 +26,34 @@ services:
     volumes:
       - my-db:/var/lib/mysql
       - ./mysql-dump:/docker-entrypoint-initdb.d
+
+  pizzaApp:
+  #  entrypoint: "true"
+    image: billingapp:prod3
+    container_name: pizzaApp
+    build: 
+      context: ./jars
+      args: 
+        message: itworkedagaindockerComposeragain
+        datasource: db
+       
+    ports:
+       - 8086:8086
+    networks:
+       - env_prod  
+
+    depends_on:
+       - db
+
+networks:
+  env_prod:
+    driver: bridge  
+  env_qa:
+    driver: bridge  
+  env_dev:
+    driver: bridge  
+
+
 # Names our volume
 volumes:
   my-db:
