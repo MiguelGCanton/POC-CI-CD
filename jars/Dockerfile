@@ -5,7 +5,7 @@ USER spring:spring
 ARG JAR_FILE="/*.jar"
 ARG datasource=localhost
 ENV datasource=${datasource}
-ARG message=itdidntworkeddockerCompose
+ARG message=message
 ENV message=${message}
 COPY ${JAR_FILE} client-0.0.1-SNAPSHOT.jar
 EXPOSE 8086

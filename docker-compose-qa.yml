@@ -13,9 +13,9 @@ services:
       MYSQL_PASSWORD: 'password'
       MYSQL_ROOT_PASSWORD: 'password'
     networks:
-       - env_prod  
+       - env_qa  
     ports:
-      - '3306:3306'
+      - 3306:3306
     expose:
       - '3306'
     volumes:
@@ -35,13 +35,13 @@ services:
     ports:
        - 8086:8086
     networks:
-       - env_prod  
+       - env_qa  
 
     depends_on:
        - db
   
 networks:
-  env_prod:
+  env_qa:
     driver: bridge  
 
 

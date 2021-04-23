@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mysql-init-script-configmap
+data:
+  initdb.sh: |-
+    #bin/bash
+    ls

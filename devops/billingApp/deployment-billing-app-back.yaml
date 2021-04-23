@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: billing-app-back-deployment
+spec:
+  selector:
+   matchLabels:
+    app: billing-app-back
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: billing-app-back
+    spec:
+      containers:
+        - name: pizza-app
+          image: gcantonmiguel/billingapp:prod3
+          env:
+            - name: message
+              value: itworkedkubernetesProd
+            - name: datasource
+              value: mysql-service
+          ports:
+            - containerPort: 8086
+              name: billingappbport
