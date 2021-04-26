@@ -9,4 +9,4 @@ ARG message=message
 ENV message=${message}
 COPY ${JAR_FILE} client-0.0.1-SNAPSHOT.jar
 EXPOSE 8086
-ENTRYPOINT ["java","-jar", "target/client-0.0.1-SNAPSHOT.jar", "--log.initial.message=${message}", "--spring.datasource.url=jdbc:mysql://${datasource}:3306/db"]
+ENTRYPOINT ["java","-jar", "client-0.0.1-SNAPSHOT.jar", "--log.initial.message=${message}", "--spring.datasource.url=jdbc:mysql://${datasource}:3306/db"]
