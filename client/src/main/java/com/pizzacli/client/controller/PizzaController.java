@@ -36,7 +36,7 @@ public class PizzaController {
     @PostMapping(value ="")
     public ResponseEntity<Message> orderPizza(@RequestBody @Valid Pizza pizza ){
         pizzaService.addPizza(pizza);
-        return  new ResponseEntity<Message>(new Message("order taken in" + this.storeCode), HttpStatus.ACCEPTED);
+        return  new ResponseEntity<Message>(new Message("order taken in change" + this.storeCode), HttpStatus.ACCEPTED);
     }
 
     @GetMapping(value ="{id}")
