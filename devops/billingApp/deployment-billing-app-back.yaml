@@ -18,9 +18,9 @@ spec:
           imagePullPolicy: Always
           env:
             - name: message
-              value: itworkedkubernetesProd
+              value: itworkedkubernetesDEVOPS
             - name: datasource
-              value: mysql-service
+              value: 10.96.1.2
           ports:
             - containerPort: 8086
               name: billingappbport
