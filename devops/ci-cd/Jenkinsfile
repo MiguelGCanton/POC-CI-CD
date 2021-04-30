@@ -15,6 +15,7 @@ git --version'''
                       string(credentialsId: 'kubernete-jenkis-server-account', variable: 'api_token')
                       ]) {
                         sh 'ls'
+            sh ' kubectl --token $api_token --server https://192.168.49.2:8443 --insecure-skip-tls-verify=true delete -f devops/billingApp/. '
             sh 'kubectl --token $api_token --server https://192.168.49.2:8443 --insecure-skip-tls-verify=true apply -f devops/billingApp/.'
             sh 'kubectl --token $api_token --server https://192.168.49.2:8443 --insecure-skip-tls-verify=true apply -f devops/db/.'
           }
