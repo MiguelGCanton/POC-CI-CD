@@ -15,6 +15,7 @@ spec:
       containers:
         - name: pizza-app
           image: gcantonmiguel/billingapp:prod3
+          imagePullPolicy: Always
           env:
             - name: message
               value: itworkedkubernetesProd
