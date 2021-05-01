@@ -20,7 +20,7 @@ spec:
             - name: message
               value: itworkedkubernetesDEVOPS
             - name: datasource
-              value: 10.96.1.2:30432
+              value: 10.96.1.2
           ports:
             - containerPort: 8086
               name: billingappbport
