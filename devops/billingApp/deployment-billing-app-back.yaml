@@ -20,7 +20,7 @@ spec:
             - name: message
               value: itworkedkubernetesDEVOPS
             - name: datasource
-              value: mysql-service:3306
+              value: 10.96.1.2:3306
           ports:
             - containerPort: 8086
               name: billingappbport
