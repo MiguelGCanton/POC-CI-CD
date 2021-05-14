@@ -13,3 +13,5 @@ spec:
   type: NodePort
   selector:
    app: billing-app-back
+
+   
